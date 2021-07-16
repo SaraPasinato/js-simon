@@ -30,7 +30,7 @@ do {
 } while (!confirm());
 //? set timeout of 30s  after that, ask number
 let timer=setInterval(function(){
-    let s=Math.floor(sec/1000 );
+    let s=Math.floor(sec/1000);
     console.log( s+ ":"+(sec%100));
     sec--;
        if (sec === 0) {
