@@ -18,6 +18,7 @@ const arr=[];
 
 fillArrayRandom(arr,elements);
 console.table(arr);
+alert("I numeri casuali sono: \n"+arr.join());
 
 /** fill the array with element elements of randomNumber(min,max)
  * 
@@ -33,7 +34,6 @@ function fillArrayRandom (arr,elements){
         }
     }
 }
-
 
 /** Get random number from minRange to maxRange (extremes inclused)
  * 
