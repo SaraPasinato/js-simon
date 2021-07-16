@@ -7,9 +7,9 @@
 * Al termine dei 30 secondi l'utente deve inserire, uno alla volta, OK
 * i numeri che ha visto precedentemente, tramite il prompt().
 *  (Bonus: far inserire i numeri da un form) //TODO
-* Dopo che sono stati inseriti i 5 numeri, il software mostra
+* Dopo che sono stati inseriti i 5 numeri, il software mostra    OK
 * in un alert quanti e quali dei numeri da indovinare sono stati individuati. 
-* (Bonus: stampare in pagina il risultato, in alternativa all'alert.)
+* (Bonus: stampare in pagina il risultato, in alternativa all'alert.) //TODO
  */
 const min = 1;
 const max = 100;
