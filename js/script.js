@@ -16,9 +16,15 @@ const max=100;
 const elements=5;
 const arr=[];
 
+// ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr,elements);
+//inline debug
 console.table(arr);
+//? write alert for user
 alert("I numeri casuali sono: \n"+arr.join());
+
+
+
 
 /** fill the array with element elements of randomNumber(min,max)
  * 
