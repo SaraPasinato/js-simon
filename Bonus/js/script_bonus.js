@@ -6,19 +6,26 @@
 * (Bonus: visualizzare il timer) //TODO OK
 * Al termine dei 30 secondi l'utente deve inserire, uno alla volta, OK
 * i numeri che ha visto precedentemente, tramite il prompt().
-*  (Bonus: far inserire i numeri da un form) //TODO
+*  (Bonus: far inserire i numeri da un form) //TODO OK
 * Dopo che sono stati inseriti i 5 numeri, il software mostra    OK
 * in un alert quanti e quali dei numeri da indovinare sono stati individuati. 
-* (Bonus: stampare in pagina il risultato, in alternativa all'alert.) //TODO
+* (Bonus: stampare in pagina il risultato, in alternativa all'alert.) //TODO OK
  */
 const min = 1;
 const max = 100;
 const elements = 5;
 const arr = [];
 const arrUser = [];
-let seconds = 10; //todo : change in 30s
+const seconds = 3; //todo : change in 30s
 const millis = seconds * 1000;
-var sec=millis;  //seconds intervals
+let sec=millis;  //seconds intervals
+
+
+// html elements vars
+const num=document.getElementById("num");
+const res=document.getElementById("result");
+const tim=document.getElementById("timer");
+const p=document.getElementById("time");
 
 // ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr, elements);
@@ -31,12 +38,17 @@ do {
 //? set timeout of 30s  after that, ask number
 let timer=setInterval(function(){
     let s=Math.floor(sec/1000);
+    tim.innerText=(sec-1)/1000;
     console.log( s+ " : "+(sec%100));
     sec--;
        if (sec === 0) {
          console.log("sono passati 30s")
+         tim.innerText="sono passati 30s";
          fillArrayUser(arrUser, elements);
-        response(arr, arrUser);
+         tim.classList.add("d-none");
+         p.classList.add("d-none");
+       
+         response(arr, arrUser);
         clearInterval(timer);
        }
 },seconds);
@@ -45,9 +57,6 @@ let timer=setInterval(function(){
 
 
 //? Response identify how many and which of the numbers to guess have been identified.
-
-
-
 
 /******************** function utils *****************/
 /** test is inclused each element of ArrU in ArrN 
@@ -70,12 +79,13 @@ function response(arrN, arrU) {
     console.log("il punteggio è:" + count);
     console.log(arrU);
     if (msg.trim() === "") {
-        msg="non hai indovinato nessun numero";
+        msg="Non hai indovinato nessun numero";
     } else {
         msg="i numeri sono: " + msg;
     }
     //alert punteggio e numeri
-    alert("il punteggio è:"+ count + "\n"+msg);
+    num.innerText="il punteggio è: "+count;
+    result.innerText=msg;
 }
 
 
@@ -96,7 +106,7 @@ function fillArrayUser(arr, elements) {
         if (!current || isNaN(current) || current === "" || current < min || current > max) {
             alert("hai inserito un valore non valido.");
         } else if (!arr.includes(current)) {
-            arr.push(current);
+            arr.push(current);  
         }
     }
     //inline debug
