@@ -4,7 +4,7 @@
 *(Decidete voi se debbano essere tutti diversi)  OK
 * Non appena l'utente schiaccia "ok", parte un timer di 30 secondi.  OK
 * (Bonus: visualizzare il timer) //TODO
-* Al termine dei 30 secondi l'utente deve inserire, uno alla volta, 
+* Al termine dei 30 secondi l'utente deve inserire, uno alla volta, OK
 * i numeri che ha visto precedentemente, tramite il prompt().
 *  (Bonus: far inserire i numeri da un form) //TODO
 * Dopo che sono stati inseriti i 5 numeri, il software mostra
@@ -18,7 +18,7 @@ const arr=[];
 const arrUser=[];
 const seconds=30; //todo : change in 30s
 const millis=seconds*1000;
-//let timer=0;
+
 
 // ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr,elements);
@@ -28,16 +28,20 @@ console.table(arr);
 do{
     alert("I numeri casuali sono: \n"+arr.join());
 }while(!confirm());
-//? set timeout of 30s 
+//? set timeout of 30s  after that, ask number
 setTimeout(function(){fillArrayUser(arrUser,elements)},millis);
-
+//? getResponse identify how many and which of the numbers to guess have been identified.
 
 
 
 
 /******************** function utils *****************/
 
-
+/** fill the array with element elements of number user input with prompt
+ * 
+ * @param {*} arr 
+ * @param {numver} elements 
+ */
 
 function fillArrayUser(arr,elements){
     console.log("sono passati 30s")
