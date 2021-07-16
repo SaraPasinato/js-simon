@@ -3,7 +3,7 @@
 /**  Un alert() espone 5 numeri generati casualmente. OK
 *(Decidete voi se debbano essere tutti diversi)  OK
 * Non appena l'utente schiaccia "ok", parte un timer di 30 secondi.  OK
-* (Bonus: visualizzare il timer) //TODO
+* (Bonus: visualizzare il timer) //TODO OK
 * Al termine dei 30 secondi l'utente deve inserire, uno alla volta, OK
 * i numeri che ha visto precedentemente, tramite il prompt().
 *  (Bonus: far inserire i numeri da un form) //TODO
@@ -119,14 +119,6 @@ function fillArrayRandom(arr, elements) {
 }
 
 
-// function countdown(sec){
-//     sec--;
-//     console.log(sec);
-//    if (sec === 0) {
-//      console.log("sono passati 30s")
-//      clearInterval(timer);
-//    }
-// }
 /** Get random number from minRange to maxRange (extremes inclused)
  * 
  * @param {number} minRange  
