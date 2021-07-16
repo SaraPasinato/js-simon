@@ -11,3 +11,17 @@
 * in un alert quanti e quali dei numeri da indovinare sono stati individuati. 
 * (Bonus: stampare in pagina il risultato, in alternativa all'alert.)
  */
+const min=1;
+const max=100;
+
+console.log(getRandomNumber(min,max));
+/** Get random number from minRange to maxRange (extremes inclused)
+ * 
+ * @param {number} minRange  
+ * @param {number} maxRange 
+ * @returns {number}
+ */
+function getRandomNumber(minRange, maxRange) {
+    return (Math.floor(Math.random() * (maxRange - minRange + 1)) +
+        minRange);
+}
