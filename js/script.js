@@ -2,11 +2,11 @@
 
 /**  Un alert() espone 5 numeri generati casualmente. OK
 *(Decidete voi se debbano essere tutti diversi)  OK
-* Non appena l'utente schiaccia "ok", parte un timer di 30 secondi. 
-* (Bonus: visualizzare il timer)
+* Non appena l'utente schiaccia "ok", parte un timer di 30 secondi.  OK
+* (Bonus: visualizzare il timer) //TODO
 * Al termine dei 30 secondi l'utente deve inserire, uno alla volta, 
 * i numeri che ha visto precedentemente, tramite il prompt().
-*  (Bonus: far inserire i numeri da un form)
+*  (Bonus: far inserire i numeri da un form) //TODO
 * Dopo che sono stati inseriti i 5 numeri, il software mostra
 * in un alert quanti e quali dei numeri da indovinare sono stati individuati. 
 * (Bonus: stampare in pagina il risultato, in alternativa all'alert.)
@@ -15,8 +15,10 @@ const min=1;
 const max=100;
 const elements=5;
 const arr=[];
-const seconds=10; //todo : change in 30s
+const arrUser=[];
+const seconds=30; //todo : change in 30s
 const millis=seconds*1000;
+//let timer=0;
 
 // ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr,elements);
@@ -27,8 +29,28 @@ do{
     alert("I numeri casuali sono: \n"+arr.join());
 }while(!confirm());
 //? set timeout of 30s 
-setTimeout(function(){console.log("sono passati 30s")},millis);
+setTimeout(function(){fillArrayUser(arrUser,elements)},millis);
 
+
+
+
+
+/******************** function utils *****************/
+
+
+
+function fillArrayUser(arr,elements){
+    console.log("sono passati 30s")
+    let current=0;
+    while (arr.length< elements){
+        current= parseInt(prompt("inserisci un numero :"));
+        if (!current || isNaN(current) || current ==="" || current<min || current>max){
+         alert("hai inserito un valore non valido.");
+        }else if(!arr.includes(current)){
+            arr.push(current);
+        }
+    }
+}
 
 /** fill the array with element elements of randomNumber(min,max)
  * 
