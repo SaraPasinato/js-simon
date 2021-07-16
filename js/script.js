@@ -29,7 +29,7 @@ do {
     alert("I numeri casuali sono: \n" + arr.join());
 } while (!confirm());
 //? set timeout of 30s  after that, ask number
-setTimeout(function () { fillArrayUser(arrUser, elements), response(arr, arrUser) }, millis);
+setTimeout(function () { fillArrayUser(arrUser, elements); response(arr, arrUser); }, millis);
 
 //? Response identify how many and which of the numbers to guess have been identified.
 

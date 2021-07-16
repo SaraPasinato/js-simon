@@ -16,9 +16,9 @@ const max = 100;
 const elements = 5;
 const arr = [];
 const arrUser = [];
-const seconds = 10; //todo : change in 30s
+const seconds = 3; //todo : change in 30s
 const millis = seconds * 1000;
-
+var sec=millis;  //seconds intervals
 
 // ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr, elements);
@@ -29,7 +29,19 @@ do {
     alert("I numeri casuali sono: \n" + arr.join());
 } while (!confirm());
 //? set timeout of 30s  after that, ask number
-setTimeout(function () { fillArrayUser(arrUser, elements), response(arr, arrUser) }, millis);
+let timer=setInterval(function(){
+    console.log(sec);
+    sec--;
+       if (sec === 0) {
+         console.log("sono passati 30s")
+         fillArrayUser(arrUser, elements);
+        response(arr, arrUser);
+        clearInterval(timer);
+       }
+},seconds);
+
+
+
 
 //? Response identify how many and which of the numbers to guess have been identified.
 
@@ -57,7 +69,7 @@ function response(arrN, arrU) {
     console.log("il punteggio è:" + count);
     console.log(arrU);
     if (msg.trim() === "") {
-        msg="non hai identificato nessun numero";
+        msg="non hai indovinato nessun numero";
     } else {
         msg="i numeri sono: " + msg;
     }
@@ -75,7 +87,8 @@ function response(arrN, arrU) {
  */
 
 function fillArrayUser(arr, elements) {
-    console.log("sono passati 30s")
+
+    //console.log("sono passati 30s")
     let current = 0;
     while (arr.length < elements) {
         current = parseInt(prompt("inserisci un numero :"));
@@ -104,6 +117,15 @@ function fillArrayRandom(arr, elements) {
     }
 }
 
+
+// function countdown(sec){
+//     sec--;
+//     console.log(sec);
+//    if (sec === 0) {
+//      console.log("sono passati 30s")
+//      clearInterval(timer);
+//    }
+// }
 /** Get random number from minRange to maxRange (extremes inclused)
  * 
  * @param {number} minRange  
@@ -114,3 +136,4 @@ function getRandomNumber(minRange, maxRange) {
     return (Math.floor(Math.random() * (maxRange - minRange + 1)) +
         minRange);
 }
+
