@@ -57,7 +57,7 @@ function response(arrN, arrU) {
     console.log("il punteggio è:" + count);
     console.log(arrU);
     if (msg.trim() === "") {
-        msg="non hai identificato nessun numero";
+        msg="non hai indovinato nessun numero";
     } else {
         msg="i numeri sono: " + msg;
     }
