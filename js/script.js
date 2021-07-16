@@ -1,7 +1,7 @@
 /* ! Descrizione */
 
-/**  Un alert() espone 5 numeri generati casualmente. 
-*(Decidete voi se debbano essere tutti diversi)
+/**  Un alert() espone 5 numeri generati casualmente. OK
+*(Decidete voi se debbano essere tutti diversi)  OK
 * Non appena l'utente schiaccia "ok", parte un timer di 30 secondi. 
 * (Bonus: visualizzare il timer)
 * Al termine dei 30 secondi l'utente deve inserire, uno alla volta, 
@@ -15,15 +15,19 @@ const min=1;
 const max=100;
 const elements=5;
 const arr=[];
+const seconds=10; //todo : change in 30s
+const millis=seconds*1000;
 
 // ? fill the array with element elements of randomNumber(min,max)
 fillArrayRandom(arr,elements);
 //inline debug
 console.table(arr);
-//? write alert for user
-alert("I numeri casuali sono: \n"+arr.join());
-
-
+//? write alert for user until press ok
+do{
+    alert("I numeri casuali sono: \n"+arr.join());
+}while(!confirm());
+//? set timeout of 30s 
+setTimeout(function(){console.log("sono passati 30s")},millis);
 
 
 /** fill the array with element elements of randomNumber(min,max)
