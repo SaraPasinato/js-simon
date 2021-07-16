@@ -13,8 +13,23 @@
  */
 const min=1;
 const max=100;
+const elements=5;
+const arr=[];
 
-console.log(getRandomNumber(min,max));
+fillArrayRandom(arr,elements);
+console.table(arr);
+
+function fillArrayRandom (arr,elements){
+    let current=0;
+    while (arr.length<elements){
+        current= getRandomNumber(min,max);
+        if(!arr.includes(current)){
+            arr.push(current);
+        }
+    }
+}
+
+
 /** Get random number from minRange to maxRange (extremes inclused)
  * 
  * @param {number} minRange  
