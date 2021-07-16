@@ -1,4 +1,5 @@
-Descrizione:
+/* ! Descrizione */
+
 /**  Un alert() espone 5 numeri generati casualmente. 
 *(Decidete voi se debbano essere tutti diversi)
 * Non appena l'utente schiaccia "ok", parte un timer di 30 secondi. 
@@ -10,4 +11,3 @@ Descrizione:
 * in un alert quanti e quali dei numeri da indovinare sono stati individuati. 
 * (Bonus: stampare in pagina il risultato, in alternativa all'alert.)
  */
-console.log("here");
