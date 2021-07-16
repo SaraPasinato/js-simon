@@ -16,7 +16,7 @@ const max = 100;
 const elements = 5;
 const arr = [];
 const arrUser = [];
-const seconds = 10; //todo : change in 30s
+const seconds = 30; // : change in 30s
 const millis = seconds * 1000;
 
 
