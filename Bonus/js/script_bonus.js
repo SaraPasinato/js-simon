@@ -16,7 +16,7 @@ const max = 100;
 const elements = 5;
 const arr = [];
 const arrUser = [];
-const seconds = 3; //todo : change in 30s
+let seconds = 10; //todo : change in 30s
 const millis = seconds * 1000;
 var sec=millis;  //seconds intervals
 
@@ -30,7 +30,8 @@ do {
 } while (!confirm());
 //? set timeout of 30s  after that, ask number
 let timer=setInterval(function(){
-    console.log(sec);
+    let s=Math.floor(sec/1000 );
+    console.log( s+ ":"+(sec%100));
     sec--;
        if (sec === 0) {
          console.log("sono passati 30s")
