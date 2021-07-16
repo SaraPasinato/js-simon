@@ -19,6 +19,11 @@ const arr=[];
 fillArrayRandom(arr,elements);
 console.table(arr);
 
+/** fill the array with element elements of randomNumber(min,max)
+ * 
+ * @param {*} arr  array 
+ * @param {number} elements  number of element
+ */
 function fillArrayRandom (arr,elements){
     let current=0;
     while (arr.length<elements){
